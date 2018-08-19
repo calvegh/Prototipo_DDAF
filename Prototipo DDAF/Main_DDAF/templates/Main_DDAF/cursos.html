@@ -1,0 +1,39 @@
+{% extends 'Main_DDAF/base.html' %}
+
+{% block content %}
+
+<div class="container text-center">
+  <h3>{{titulo}}</h3>
+  <p><em>{{intro}}</em></p>
+  <a type ="button" class="btn btn-primary" href='../addcurso/'>Agregar Curso</a>
+
+
+<table class="table" align="text-center">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Curso</th>
+			<th scope="col">Horario</th>
+			<th scope="col">Pista</th>
+			<th scope="col" >Días</th>
+		</tr>
+	</thead>
+	 {% for c in cursosddaf %}
+	<tbody>
+		<tr>
+			<th scope="row">{{c.id}}</th>
+			<td>{{c.nombre}}</td>
+			<td>{{c.horario}}:00</td>
+			<td>{{c.pista}}</td>
+			<td>{{c.días}}</td>
+			<td>{{c.capacidad}}</td>
+			<td><a type ="button" class="btn btn-primary" href="{% url 'inscribircurso' pk=c.pk %}">Inscribir curso</a></td>
+			<td><a type ="button" class="btn btn-primary" href="{% url 'ver_alumnos_curso' pk=c.pk %}">Ver alumnos inscritos</a></td>
+			<td><a type ="button" class="btn btn-primary" href="{% url 'asistencias' pk=c.pk %}">Ver asistencia</a></td>
+		</tr>
+    {% endfor %}
+</tbody>
+
+</div>
+
+{% endblock %}

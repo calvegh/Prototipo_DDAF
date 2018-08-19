@@ -1,0 +1,16 @@
+{% extends 'Main_DDAF/base1.html' %}
+
+{% block content %}
+
+
+<div class="container text-center">
+  <h3>{{texto1}}</h3>
+  <p><em>{{texto2}}</em></p>
+</div>
+ <form action="/Main_DDAF/add_asistencia/" method="post" enctype="multipart/form-data"> 
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit" class="btn btn-default">Enviar asistencia!</button>
+
+
+{%endblock%}

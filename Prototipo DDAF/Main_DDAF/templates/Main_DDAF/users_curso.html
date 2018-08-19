@@ -1,0 +1,19 @@
+{% extends 'Main_DDAF/base1.html' %}
+
+{% block content %}
+<div class="container text-center">
+  <h3>{{titulo}}</h3>
+  <p><em>{{intro}}</em></p>
+  <ul class="list-group">
+    {% for us in user %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+    {{us.glosa_alumno}}  
+    {% endfor %}
+
+</ul>
+
+</div>
+
+
+
+{% endblock %}

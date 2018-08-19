@@ -1,0 +1,22 @@
+{% extends 'Main_DDAF/base.html' %}
+
+{% block content %}
+<div class="container text-center">
+  <h3>{{titulo}}</h3>
+  <p><em>{{intro}}</em></p>
+   <a type ="button" class="btn btn-primary" href='../adduser/'>Agregar Usuarios</a>
+  <ul class="list-group">
+    {% for us in user %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+    {{us.nombre}} {{us.apellido}}
+    <span class="badge badge-primary badge-pill">{{us.puntaje_psu}}</span>
+  </li>
+    {% endfor %}
+
+</ul>
+
+</div>
+
+
+
+{% endblock %}

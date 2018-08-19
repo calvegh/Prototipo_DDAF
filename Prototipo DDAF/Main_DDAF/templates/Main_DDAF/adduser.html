@@ -1,0 +1,17 @@
+{% extends 'Main_DDAF/base.html' %}
+
+{% block content %}
+
+<div class="container text-center">
+    <h3>{{titulo}}</h3>
+  <p><em>{{intro}}</em></p>
+  <a type ="button" class="btn btn-primary" href='../users/'>Ver usuarios</a>
+  <form action="/Main_DDAF/added/" method="post" enctype="multipart/form-data"> 
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit" class="btn btn-default">Registrar!</button>
+</form>
+</div>
+
+
+{% endblock %}
